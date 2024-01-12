@@ -26,7 +26,6 @@ const TempGraphic = ({ cityCoordinates }) => {
                     const response = await fetch(url, options);
                     const result = await response.json();
 
-                    // Estrai le temperature dal risultato della richiesta
                     const temperatures = result.list.map(day => (day.main.temp - 273.15).toFixed(2));
                     setTemperatureData(temperatures);
                 } catch (error) {
@@ -55,11 +54,11 @@ const TempGraphic = ({ cityCoordinates }) => {
     if(cityCoordinates){
     return (
         <div style={{ maxHeight: "500px" }}>
-            <h2>Temperature graph starting from today to the next 20 days</h2>
+            <h2>Temperature graph starting from today to the next 20 days: </h2>
             <Line
                 data={data}
-                width={200}  // Larghezza desiderata
-                height={150} // Altezza desiderata
+                width={200}  
+                height={150} 
             />
         </div>
     );

@@ -44,7 +44,7 @@ const Prevision = ({ cityCoordinates }) => {
     return null;
   }
 
-  // Filtra solo i dati per i giorni desiderati
+
   const filteredData = dailyData.filter((day, index) => [5, 15, 25, 35].includes(index));
 
   const handleDayClick = (day) => {
@@ -77,7 +77,6 @@ const Prevision = ({ cityCoordinates }) => {
             <Modal.Title>Additional Information for {new Date(selectedDay.dt * 1000).toLocaleDateString()}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {/* Inserisci qui ulteriori informazioni */}
               
               <p>Max temperature registered in the selected date: {(selectedDay.main.temp_max - 273.15).toFixed(2)} °C</p>
               <p>Min temperature registered in the selected date: {(selectedDay.main.temp_min - 273.15).toFixed(2)} °C</p>
