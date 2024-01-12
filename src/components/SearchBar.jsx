@@ -43,7 +43,6 @@ const SearchBar = ({ setWeatherData, setCityCoordinates }) => {
           const weatherData = await weatherResponse.json();
           setWeatherData(weatherData);
           setCityCoordinates({ lat, lon });
-          console.log(weatherData)
         } else {
           console.error('Errore nella risposta della nuova API per il meteo');
         }
