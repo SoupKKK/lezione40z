@@ -2,37 +2,71 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header p:first-child{
+  font-size: 30px;
+}
+header{
+  padding: 1%;
+  background-color: aquamarine;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input{
+  padding: 5px;
+  margin: 15px;
+  border-radius: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.MainWeather .card{
+  margin: 10px;
+  margin-left: auto; 
+  border: 2px solid black;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Previsions{
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 10px;
+  margin-right: 15px;
+
 }
+
+.PrevisonDays {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-right: 55px;
+}
+
+.PrevisonDays li {
+  border: 2px solid black;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 15px;
+  flex-basis: calc(50% - 90px);
+  margin: 15px;
+}
+
+
+.btn-close{
+  display: none;
+}
+
+.modal-content{
+ border: 1px solid black;
+ padding: 150px;
+ backdrop-filter: blur(5px);
+ position: fixed;
+ left: 30%;
+ top: 10%;
+}
+
+
+

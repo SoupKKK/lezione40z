@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css'
+import Weather from './components/Weather';
+import Prevision from './components/Prevision';
+import Loading from './components/Loading';
+import SearchBar from './components/SearchBar'; 
+import MyHeader from './components/MyHeader';
+import { Col, Container, Row } from 'react-bootstrap';
+import TempGraphic from './components/TempGraphic';
 
-function App() {
+const App = () => {
+  const [weatherData, setWeatherData] = useState(null);
+  const [cityCoordinates, setCityCoordinates] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Container>
+      <MyHeader/>
+      <SearchBar
+        setWeatherData={setWeatherData}
+        setCityCoordinates={setCityCoordinates}
+        setLoading={setLoading}
+      />
+
+      {loading && <Loading />}
+
+      {weatherData && !loading && (
+        <Row className="main">
+          <Col className="Previsions">
+            <Prevision cityCoordinates={cityCoordinates} />
+          </Col>
+          <Col className="MainWeather">
+            <Weather weatherData={weatherData} />
+          </Col>
+        </Row>
+      )}
+      <TempGraphic cityCoordinates={cityCoordinates}/>
+    </Container>
   );
 }
 
